@@ -150,109 +150,11 @@
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
                 <div class="row">
-                        <div class="col-md-6">                        
-                            <!-- START GOOGLE WORLD MAP -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Google World Map</h3>
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="google_world_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-                            <!-- END GOOGLE WORLD MAP-->
-                        </div>                                        
-                        <div class="col-md-6">                        
-                            <!-- START GOOGLE EUROPE MAP -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Google Europe Map</h3>
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="google_eu_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-                            <!-- END GOOGLE EUROPE MAP -->
-                        </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7843179.165736053!2d-63.549347000000004!3d-16.2883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1557949126803!5m2!1ses!2sbo" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>                                  
+                     
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">                        
-                            <!-- START GOOGLE MAP WITH MARKER -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Google Map With Markers</h3>
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="google_ptm_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-                            <!-- END GOOGLE MAP WITH MARKER -->
-                        </div>                                        
-                        <div class="col-md-6">                        
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Google Map Search</h3>
-                                    <div class="pull-right" style="width: 200px;">
-                                        <input type="text" id="target" class="form-control"/>
-                                    </div>                                
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="google_search_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">                        
-                            <!-- START jVectorMap World -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">jVectorMap World</h3>
-                                    <div class="pull-right" style="width: 200px;">
-                                        <input type="text" class="form-control" placeholder="Select country" id="vector_world_map_value"/>
-                                    </div>                                
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="vector_world_map" style="width: 100%; height: 300px"></div>
-                                </div>
-                            </div>
-                            <!-- END jVectorMap World -->
-                        </div>               
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">                        
-                            <!-- START jVectorMap Europe -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">jVectorMap Europe</h3>
-
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="vector_europe_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-                            <!-- END jVectorMap Europe -->
-                        </div>
-                        <div class="col-md-6">                        
-                            <!-- START jVectorMap USA -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">jVectorMap USA</h3>
-                                    <div class="pull-right" style="width: 200px;">
-                                        <input type="text" class="form-control" placeholder="Select state" id="vector_usa_map_value"/>
-                                    </div>
-                                </div>
-                                <div class="panel-body panel-body-map">
-                                    <div id="vector_usa_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                            </div>
-                            <!-- END jVectorMap USA -->
-                        </div>
-                    </div>
+                  
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                                
             </div>            
