@@ -37,7 +37,6 @@ class Propietario extends CI_Controller {
 		$this->Msecurity->url_and_lan($d);
 	
 		$d["propietarios"]=$this->Mpropietario->read_all();
-			//print_r($d["propietarios"]);
 		$this->load->view('propietario/index', $d);
 	
 	}
