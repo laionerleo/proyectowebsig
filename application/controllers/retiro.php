@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Micro extends CI_Controller {
+class Retiro extends CI_Controller {
 
 	public function __construct(){
         
@@ -20,7 +20,7 @@ class Micro extends CI_Controller {
         $this->lang->load('welcome');
 
         //cargamos los modelos
-        $this->load->model(array('Msecurity','Mmicro'));
+        $this->load->model(array('Msecurity','Mretiro'));
       /*      if(!@$_SESSION['user']){
             $d = array();
             $this->Msecurity->url_and_lan($d);
@@ -35,54 +35,26 @@ class Micro extends CI_Controller {
 	{	
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
-		$d["micros"]=$this->Mmicro->read_all();
-		$this->load->view('micros/index', $d);
+		$d["retiros"]=$this->Mretiro->read_all();
+		$this->load->view('retiro/index', $d);
 	
 	}
 	/**/
-	public function mapa()
-	{	
-		$d = array();
-		$this->Msecurity->url_and_lan($d);
-		$d["ubicaciones"]= json_encode($this->Mmicro->getubicacion());
-		$this->load->view('mapa/mapachoferes', $d);
 	
-	}
-	public function cargarmapa()
-	{	
-		$d = array();
-		$this->Msecurity->url_and_lan($d);
-		$d["ubicaciones"]= json_encode($this->Mmicro->getubicacion());
-		$this->load->view('mapa/mapaoficial', $d);
-	
-	}
-
-	/**/
-	
-	public function postubicacion($lan, $lat,$long,$idmicro)
-	{	
-		$d = array();
-		$this->Msecurity->url_and_lan($d);
-		$ok=$this->Mmicro->create_ubicacion($lat,$long,$idmicro);
-		print($ok);
-		//$d["micros"]=$this->Mmicro->read_all();
-	//	$this->load->view('micros/index', $d);
-	
-	}
-	//vista que direcciona al formulario para crear micro
-	public function registrar($lan, $idmicro){
+	//vista que direcciona al formulario para crear propietario
+	public function registrar($lan, $idretiro){
         $d = array();
         $this->Msecurity->url_and_lan($d);
-		if ($idmicro==0) {
-		$this->load->view('micro/create',$d);        	
+		if ($idretiro==0) {
+		$this->load->view('retiro/create',$d);        	
 		}	
 
     }
 	/**/
-	public function eliminar($lan, $idmicro){
+	public function eliminar($lan, $idretiro){
         $d = array();
         $this->Msecurity->url_and_lan($d);
-		$this->Mmicro->eliminarmicro($idmicro);
+		$this->Mretiro->eliminarretiro($idretiro);
 	
 	
 		      
@@ -95,8 +67,8 @@ class Micro extends CI_Controller {
 		$this->Msecurity->url_and_lan($d);
         parse_str($this->input->post("datos"), $nuevodato);
         $nuevodato = $this->Msecurity->sanear_array($nuevodato);
-        $ok=$this->Mmicro->guardar($nuevodato);
-        $d["produccion"]=$this->Mmicro->getproduccion();
+        $ok=$this->Mpropietario->guardar($nuevodato);
+        $d["produccion"]=$this->Mretiro->getproduccion();
 
       
     

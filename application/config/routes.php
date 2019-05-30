@@ -11,7 +11,14 @@ $i                                        = '^(en|es|de|it|po)';
 $route[$l.'personas']                 		= 'Persona';
 $route[$l.'choferes']                 		= 'Chofer';
 $route[$l.'micro']                 		    = 'Micro';
-$route[$l.'micro/mapa']                 		    = 'Micro/mapa';
+$route[$l.'micro/mapa']                     = 'Micro/mapa';
+
+$route[$l.'cargarmapa']                     = 'Micro/cargarmapa';
+
+$route[$l.'ubicacion/(:any)/(:any)/(:any)']        = 'Micro/postubicacion/$1/$2/$3/$4';
+$route[$l.'ubicacion']                     = 'Micro/mapa';
+$route[$l.'choferes/lista']                 		= 'Chofer/consultabase';
+
 
 
 $route[$l.'propietario']                 	= 'Propietario';

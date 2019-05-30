@@ -149,11 +149,23 @@
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                <div class="row">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7843179.165736053!2d-63.549347000000004!3d-16.2883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1557949126803!5m2!1ses!2sbo" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>                                  
-                     
+                <input type="text" name="url" id="url" value="<?=$url?>">
+                    <div class="row" id="contenedor">
+                        
+                    <?php $this->load->view("mapa/mapaoficial") ; ?>
+                    
                     </div>
+                    <script type="text/javascript">
+                    var urlajax=$("#url").val()+"cargarmapa";
+                    function cargarmapa(){
+                        $("#contenedor").load(urlajax); 
+                     }
+                    
+                    setInterval('cargarmapa()',15000);
+                    
 
+                     
+                    </script>
                   
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                                

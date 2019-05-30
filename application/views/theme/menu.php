@@ -2,7 +2,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="">
-                        <a href="<?=$url?>">SIGMICROS</a>
+                        <a href="<?=$url?>">LINEA 49</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                    

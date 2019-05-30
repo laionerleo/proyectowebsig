@@ -11,11 +11,33 @@ class Mmicro extends CI_MODEL {
 
  	/*funcion que debuelve toda las razas de la tablas razas*/
  	public function read_all(){
-        $this->db->where('tea_status',"1");
+        //$this->db->where('tea_status',"1");
  		$query = $this->db->get('sig_micro');
  		$result = $query->result();
  		return $result;
- 	}
+     }
+     
+
+     public function getubicacion(){
+        
+        
+        $this->db->group_by("mic_id"); 
+        $query = $this->db->get('sig_ubicacion');
+        $result = $query->result();
+        return $result;
+     }
+     public function create_ubicacion($lat,$long,$idmi){
+    
+        $datos = array( 'ubi_latitud' =>$lat,
+                        'ubi_longitud' =>$long,
+                        'mic_id'=>$idmi
+                                
+                            );
+    
+        $this->db->insert("sig_ubicacion",$datos);
+        $nuevo=$this->db->insert_id();
+        return $nuevo;
+        }
  	/**///read_one
  	public function read_one($id){
          //$this->db->where('tea_id',$id);

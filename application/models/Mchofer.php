@@ -10,12 +10,13 @@ class Mchofer extends CI_MODEL {
  	}
 
  	/*funcion que debuelve toda las razas de la tablas razas*/
- 	public function read_all(){
-        $this->db->where('tea_status',"1");
+     public function read_all(){
+        //$this->db->where('tea_status',"1");
  		$query = $this->db->get('sig_chofer');
  		$result = $query->result();
  		return $result;
  	}
+ 
  	/**///read_one
  	public function read_one($id){
          //$this->db->where('tea_id',$id);

@@ -20,13 +20,12 @@ class Chofer extends CI_Controller {
         $this->lang->load('welcome');
 
         //cargamos los modelos
-		$this->load->model(array('Msecurity','Mchofer'));
-        /*    if(!@$_SESSION['user']){
+        $this->load->model(array('Msecurity','Mchofer'));
+      /*      if(!@$_SESSION['user']){
             $d = array();
             $this->Msecurity->url_and_lan($d);
             redirect($d['url']."?m=Usted tiene que iniciar session !!!");
-		}
-		*/
+        }*/
 
     }
 
@@ -36,33 +35,40 @@ class Chofer extends CI_Controller {
 	{	
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
-		 //$d["produccion"]=$this->Mchofer->read_all();
+		$d["choferes"]=$this->Mchofer->read_all();
 		$this->load->view('chofer/index', $d);
 	
 	}
 	/**/
 	
-	
-	public function registrar($lan, $idproduccion){
+	//vista que direcciona al formulario para crear chofer
+	public function registrar($lan, $idchofer){
         $d = array();
         $this->Msecurity->url_and_lan($d);
-		if ($idproduccion==0) {
-		$d["produccion"]=$this->Mchofer->getproduccion();
-		$d["personas"]=$this->Mpersonas->get_all();
-		$this->load->view('produccion/create',$d);        	
-      
+		if ($idchofer==0) {
+		$this->load->view('chofer/create',$d);        	
 		}	
+
     }
 	/**/
-	public function eliminar($lan, $idproduccion){
+	public function eliminar($lan, $idchofer){
         $d = array();
         $this->Msecurity->url_and_lan($d);
-		$this->Mchofer->eliminarproduccion($idproduccion);
+		$this->Mchofer->eliminarchofer($idchofer);
 	
 	
 		      
 			
     }
+	/**/
+	public function consultabase()
+	{
+			 $d["choferes"]=$this->Mchofer->read_all();
+			 print_r(json_encode(array("consulta" => $d["choferes"])));
+			 return json_encode(array("consulta" => $d["choferes"]));
+			 
+	}
+		/**/
 	/**/
 	   public function guardar()
    {
@@ -70,15 +76,11 @@ class Chofer extends CI_Controller {
 		$this->Msecurity->url_and_lan($d);
         parse_str($this->input->post("datos"), $nuevodato);
         $nuevodato = $this->Msecurity->sanear_array($nuevodato);
-          $ok=$this->Mchofer->guardar($nuevodato);
-          $d["produccion"]=$this->Mchofer->getproduccion();
+        $ok=$this->Mchofer->guardar($nuevodato);
+        $d["produccion"]=$this->Mchofer->getproduccion();
 
-      	$this->load->view('produccion/listarproduccion',$d);        		    
-
-       
-        
- 
-       
+      
+    
    }
 	/**/
 

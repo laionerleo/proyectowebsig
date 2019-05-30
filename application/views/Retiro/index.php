@@ -152,7 +152,7 @@
                     
                 <div class="row">
                         <div class="col-md-12">
-                            <h1>CHOFERES</h1>
+                            <h1>RETIROS</h1>
 
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
@@ -162,29 +162,23 @@
                                             <thead>
                                                 <tr>
                                                     <th>N#</th>
-                                                    <th>CI</th>
-                                                    <th>Nombre completo</th>
-                                                    <th>SEXO</th>
-                                                    <th>EDAD</th>
-                                                    <th>DIRECCION</th>
-                                                    <th>CELULAR</th>
+                                                    <th>DESCRIPCION</th>
+                                                    <th>FECHA</th>
+                                                    <th>ID MICRO</th>
                                                     <th>ESTADO</th>
                                                     <th>OPCIONES</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php for ($i=0; $i < count($choferes) ; $i++) { 
+                                            <?php for ($i=0; $i < count($retiros) ; $i++) { 
                                                     # code...
                                                  ?>
                                                  <tr>
                                                     <td><?php echo $i ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_ci ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_nombrecompleto ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_sexo ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_edad ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_direccion ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_celular ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_estado ?></td>
+                                                    <td><?php echo $retiros[$i]->ret_descripcion ?></td>
+                                                    <td><?php echo $retiros[$i]->ret_fecha ?></td>
+                                                    <td><?php echo $retiros[$i]->mic_id ?></td>
+                                                    <td><?php echo $retiros[$i]->ret_estado ?></td>
                                                     <td> "aqui vendran opciones"</td>
                                                 </tr>
 

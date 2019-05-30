@@ -10,5 +10,7 @@
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="<?php echo base_url(); ?>application/assets/css/theme-default.css"/>
+        <script src="<?php echo base_url(); ?>application/assets/js/jquery-3.3.1.min.js"></script>
         <!-- EOF CSS INCLUDE -->                                      
-    </head>
+                       
+</head>
