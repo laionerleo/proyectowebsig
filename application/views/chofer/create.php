@@ -151,57 +151,82 @@
                 <div class="page-content-wrap">
 
                 <div class="row">
-                        <div class="col-md-12">
-                            <h1>CHOFERES</h1>
-                            <a href="<?=$url  ?>choferes/vistacrear/0">crear chofer</a>
+                  <form class="form-horizontal" id="formdatos">
 
-                            <!-- START DEFAULT DATATABLE -->
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table datatable">
-                                            <thead>
-                                                <tr>
-                                                    <th>N#</th>
-                                                    <th>CI</th>
-                                                    <th>Nombre completo</th>
-                                                    <th>SEXO</th>
-                                                    <th>EDAD</th>
-                                                    <th>DIRECCION</th>
-                                                    <th>CELULAR</th>
-                                                    <th>ESTADO</th>
-                                                    <th>OPCIONES</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php for ($i=0; $i < count($choferes) ; $i++) {
-                                                    # code...
-                                                 ?>
-                                                 <tr>
-                                                    <td><?php echo $i ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_ci ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_nombrecompleto ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_sexo ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_edad ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_direccion ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_celular ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_estado ?></td>
-                                                    <td> "aqui vendran opciones"</td>
-                                                </tr>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Nombre completo</label>
+                                           <div class="col-sm-10">
+                                               <input id="inpnombrecompleto"  name="inpnombrecompleto" type="text" class="form-control" placeholder="introducir nombre">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Carnet de identidad</label>
+                                           <div class="col-sm-10">
+                                              <input id="inpci"  name="inpci" type="number" class="form-control" placeholder="introducir carnet de identidad">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Edad</label>
+                                           <div class="col-sm-10">
+                                              <input id="inpedad"  name="inpedad" type="number" class="form-control" >
+                                           </div>
+                                       </div>
+                                      <div class="form-group row">
 
-                                            </tr>
-                                        <?php } ?>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END DEFAULT DATATABLE -->
+                                           <div class="col-sm-10">
+                                                       <input type="hidden" name="url" id="url" value="<?=$url?>">
+                                                       <button id="btningresar" type="button" class="btn btn-primary">INGRESAR</button>
 
 
+                                           </div>
 
-                        </div>
+
+                                       </div>
+                                     </form>
+                                     <script type="text/javascript">
+
+                           $("#btningresar").click(
+                                   function () {
+
+                                                           var datos=$("#formdatos").serialize();
+                                                           var urlajax=$("#url").val()+"choferes/crear";
+                                                             //$("#listarproduccion").load(urlajax,{datos});
+                                                             //$("#cargaguardar").show();
+                                                             //$("#inpcantidad").value("");
+                                                             //4444444444setTimeout(function() {$("#cargaguardar").hide(); }, 1500) ;
+                                                                  $.ajax({
+                                                                       url: urlajax,
+                                                                       data: {datos},
+                                                                       type : 'POST',
+                                                                       dataType: "json",
+                                                                       beforeSend:function( ) {
+                                                                       //$("#inpcantidad").val("");
+                                                                       //$("#cargaguardar").show();
+                                                                       },
+                                                                       success:function(response) {
+                                                                         window.location=$("#url").val()+"chofer";
+
+                                                                       },
+                                                                       error: function (data) {
+                                                                          window.location=$("#url").val()+"chofer";
+                                                                       },
+                                                                       complete:function( ) {
+                                                                        //   $("#cargaguardar").hide();
+
+
+
+                                                                       },
+                                                                   }
+                                                                   );
+
+
+
+                                                           });
+
+
+
+                       </script>
+
 
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->

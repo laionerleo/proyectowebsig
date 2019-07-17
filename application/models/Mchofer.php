@@ -16,7 +16,7 @@ class Mchofer extends CI_MODEL {
  		$result = $query->result();
  		return $result;
  	}
- 
+
  	/**///read_one
  	public function read_one($id){
          //$this->db->where('tea_id',$id);
@@ -27,26 +27,19 @@ class Mchofer extends CI_MODEL {
  		return @$result;
  	}
  	/**/
- 	public function create_one($dato){
-    
-    $datos = array( 'tea_fullname' =>$dato['inp_fullname'],
-                    'tea_email' =>$dato['inp_email'],
-                    'tea_facebook' =>$dato['inp_facebook'],
-                    'tea_twitter' =>$dato['inp_twitter'],
-                    'tea_youtube' =>$dato['inp_youtube'],
-                    'tea_title' =>$dato['inp_title'],
-                    'tea_description' =>$dato['inp_description'],
-                    'tea_position' =>$dato['inp_position'],
-                    'lan' =>$dato['inp_lan'],
-                    'registration_date' =>date('y-m-d h:i:s'),
-                    'user_id' =>$dato['inp_user'],
-                    'tea_status' =>'1',        
-                        );
 
-    $this->db->insert("sig_chofer",$datos);
-    $nuevo=$this->db->insert_id();
-    return $nuevo;
-    }
+		public function guardar($dato){
+
+	    $datos = array( 'cho_nombrecompleto' =>$dato['inpnombrecompleto'],
+	                    'cho_ci' =>$dato['inpci'],
+											'cho_edad' =>$dato['inpedad'],
+	                    'cho_estado' =>"1",
+	                        );
+
+	    $this->db->insert("sig_chofer",$datos);
+	    $nuevo=$this->db->insert_id();
+	    return $nuevo;
+	    }
  	/**/
       public function edit_one($dator){
  $datos = array( 'tea_fullname' =>$dato['inp_fullname'],
@@ -60,7 +53,7 @@ class Mchofer extends CI_MODEL {
                     'lan' =>$dato['inp_lan'],
                     'registration_date' =>date('y-m-d h:i:s'),
                     'user_id' =>$dato['inp_user'],
-                    'tea_status' =>'1',        
+                    'tea_status' =>'1',
                         );
     $this->db->where('tea_id',$dato['teaid']);
     $this->db->update("sig_chofer",$datos);
@@ -70,16 +63,16 @@ class Mchofer extends CI_MODEL {
 
     /**/
     public function delete_one($id){
-    
+
     $datos = array( 'tea_status' => "0"
-                
+
                         );
     $this->db->where('tea_id',$id);
     $this->db->update("sig_chofer",$datos);
 
-    
+
     }
     /**/
- 	
+
 
 }

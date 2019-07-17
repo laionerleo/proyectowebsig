@@ -10,6 +10,10 @@ $i                                        = '^(en|es|de|it|po)';
 
 $route[$l.'personas']                 		= 'Persona';
 $route[$l.'choferes']                 		= 'Chofer';
+$route[$l.'choferes/vistacrear/(:num)']      ='Chofer/registrar/$1/$2';
+$route[$l.'choferes/crear']      ='Chofer/guardar';
+
+
 $route[$l.'micro']                 		    = 'Micro';
 $route[$l.'micro/mapa']                     = 'Micro/mapa';
 
