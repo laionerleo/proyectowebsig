@@ -26,12 +26,13 @@ class Mpropietario extends CI_MODEL {
  		return @$result;
  	}
  	/**/
- 	public function create_one($dato){
-    
-    $datos = array( 'pro_nombrecompleto' =>$dato['inp_nombrecompleto'],
-                    'pro_celular' =>$dato['inp_celular'],
-                    
-                    'pro_status' =>'1',        
+ 	public function guardar($dato){
+
+    $datos = array( 'pro_nombrecompleto' =>$dato['inpnombrecompleto'],
+                    'pro_celular' =>$dato['inpcelular'],
+										'pro_direccion' =>$dato['inpdir'],
+										'pro_ci' =>$dato['inpci'],
+                    'pro_estado' =>"1",
                         );
 
     $this->db->insert("sig_propietario",$datos);
@@ -51,7 +52,7 @@ class Mpropietario extends CI_MODEL {
                     'lan' =>$dato['inp_lan'],
                     'registration_date' =>date('y-m-d h:i:s'),
                     'user_id' =>$dato['inp_user'],
-                    'pro_status' =>'1',        
+                    'pro_status' =>'1',
                         );
     $this->db->where('pro_id',$dato['teaid']);
     $this->db->update("sig_propietario",$datos);
@@ -61,16 +62,16 @@ class Mpropietario extends CI_MODEL {
 
     /**/
     public function delete_one($id){
-    
+
     $datos = array( 'pro_status' => "0"
-                
+
                         );
     $this->db->where('pro_id',$id);
     $this->db->update("sig_propietario",$datos);
 
-    
+
     }
     /**/
- 	
+
 
 }

@@ -4,18 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Propietario extends CI_Controller {
 
 	public function __construct(){
-        
+
         parent::__construct();
- 
+
         //cargamos la base de datos por defecto
         $this->load->database('default');
-        
+
         //cargamos los agentes para los dispositivos
         $this->load->library('user_agent');
 
 		//cargamos el helper url y el helper form
         $this->load->helper(array('url', 'language'));
-        
+
         //cargamamos la libreria del lenguaje
         $this->lang->load('welcome');
 
@@ -30,24 +30,24 @@ class Propietario extends CI_Controller {
     }
 
 	/**/
-		
+
 	public function index()
-	{	
+	{
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$d["propietarios"]=$this->Mpropietario->read_all();
 		$this->load->view('propietario/index', $d);
-	
+
 	}
 	/**/
-	
+
 	//vista que direcciona al formulario para crear propietario
 	public function registrar($lan, $idpropietario){
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		if ($idpropietario==0) {
-		$this->load->view('propietario/create',$d);        	
-		}	
+		$this->load->view('propietario/create',$d);
+		}
 
     }
 	/**/
@@ -55,10 +55,10 @@ class Propietario extends CI_Controller {
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		$this->Mpropietario->eliminarpropietario($idpropietario);
-	
-	
-		      
-			
+
+
+
+
     }
 	/**/
 	   public function guardar()
@@ -68,10 +68,10 @@ class Propietario extends CI_Controller {
         parse_str($this->input->post("datos"), $nuevodato);
         $nuevodato = $this->Msecurity->sanear_array($nuevodato);
         $ok=$this->Mpropietario->guardar($nuevodato);
-        $d["produccion"]=$this->Mpropietario->getproduccion();
+        //$d["produccion"]=$this->Mpropietario->getproduccion();
 
-      
-    
+
+
    }
 	/**/
 
@@ -80,7 +80,7 @@ class Propietario extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error404', $d);
-	
+
 	}
 
 	/**/
@@ -90,7 +90,7 @@ class Propietario extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 	/**/
@@ -100,7 +100,7 @@ class Propietario extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 

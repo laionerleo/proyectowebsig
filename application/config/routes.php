@@ -12,6 +12,13 @@ $route[$l.'personas']                 		= 'Persona';
 $route[$l.'choferes']                 		= 'Chofer';
 $route[$l.'choferes/vistacrear/(:num)']      ='Chofer/registrar/$1/$2';
 $route[$l.'choferes/crear']      ='Chofer/guardar';
+$route[$l.'propietarios']                 		= 'Propietario';
+$route[$l.'propietarios/vistacrear/(:num)']      ='Propietario/registrar/$1/$2';
+$route[$l.'propietarios/crear']      ='Propietario/guardar';
+$route[$l.'micros']                 		= 'Micro';
+$route[$l.'micros/vistacrear/(:num)']      ='Micro/registrar/$1/$2';
+$route[$l.'micros/crear']                 ='Micro/guardar';
+
 
 
 $route[$l.'micro']                 		    = 'Micro';

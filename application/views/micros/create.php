@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from aqvatarius.com/themes/atlant/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 19:26:48 GMT -->
@@ -151,57 +150,87 @@
                 <div class="page-content-wrap">
 
                 <div class="row">
-                        <div class="col-md-12">
-                            <h1>CHOFERES</h1>
-                            <a class="btn btn-primary" href="<?=$url  ?>choferes/vistacrear/0">crear chofer</a>
+                  <form class="form-horizontal" id="formdatos">
 
-                            <!-- START DEFAULT DATATABLE -->
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table datatable">
-                                            <thead>
-                                                <tr>
-                                                    <th>N#</th>
-                                                    <th>CI</th>
-                                                    <th>Nombre completo</th>
-                                                    <th>SEXO</th>
-                                                    <th>EDAD</th>
-                                                    <th>DIRECCION</th>
-                                                    <th>CELULAR</th>
-                                                    <th>ESTADO</th>
-                                                    <th>OPCIONES</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php for ($i=0; $i < count($choferes) ; $i++) {
-                                                    # code...
-                                                 ?>
-                                                 <tr>
-                                                    <td><?php echo $i ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_ci ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_nombrecompleto ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_sexo ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_edad ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_direccion ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_celular ?></td>
-                                                    <td><?php echo $choferes[$i]->cho_estado ?></td>
-                                                    <td> "aqui vendran opciones"</td>
-                                                </tr>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Numero interno</label>
+                                           <div class="col-sm-10">
+                                               <input id="inpnrointerno"  name="inpnrointerno" type="number" class="form-control" placeholder="introducir Numero interno">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Placa</label>
+                                           <div class="col-sm-10">
+                                              <input id="inpplaca"  name="inpplaca" type="text" class="form-control" placeholder="introducir Placa">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Modelo</label>
+                                           <div class="col-sm-10">
+                                              <input id="inpmodelo"  name="inpmodelo" type="text" class="form-control" placeholder="introducir Modelo">
+                                           </div>
+                                               </div>
 
-                                            </tr>
-                                        <?php } ?>
+                                      <div class="form-group row">
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END DEFAULT DATATABLE -->
+                                           <div class="col-sm-10">
+                                                       <input type="hidden" name="url" id="url" value="<?=$url?>">
+                                                       <button id="btningresar" type="button" class="btn btn-primary">INGRESAR</button>
+                                                       <a class="btn btn-primary" href="<?=$url?>micro">cancelar</a>
 
 
 
-                        </div>
+                                           </div>
+
+
+                                       </div>
+                                     </form>
+                                     <script type="text/javascript">
+
+                           $("#btningresar").click(
+                                   function () {
+
+                                                           var datos=$("#formdatos").serialize();
+                                                           var urlajax=$("#url").val()+"micros/crear";
+                                                             //$("#listarproduccion").load(urlajax,{datos});
+                                                             //$("#cargaguardar").show();
+                                                             //$("#inpcantidad").value("");
+                                                             //4444444444setTimeout(function() {$("#cargaguardar").hide(); }, 1500) ;
+                                                                  $.ajax({
+                                                                       url: urlajax,
+                                                                       data: {datos},
+                                                                       type : 'POST',
+                                                                       dataType: "json",
+                                                                       beforeSend:function( ) {
+                                                                       //$("#inpcantidad").val("");
+                                                                       //$("#cargaguardar").show();
+                                                                       },
+                                                                       success:function(response) {
+                                                                         window.location=$("#url").val()+"micro";
+
+                                                                       },
+                                                                       error: function (data) {
+                                                                         // con este codigo se manda a las vista listar micros
+
+                                                                          window.location=$("#url").val()+"micro";
+                                                                       },
+                                                                       complete:function( ) {
+                                                                        //   $("#cargaguardar").hide();
+
+
+
+                                                                       },
+                                                                   }
+                                                                   );
+
+
+
+                                                           });
+
+
+
+                       </script>
+
 
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->

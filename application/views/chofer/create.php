@@ -168,14 +168,33 @@
                                        <div class="form-group row">
                                            <label class="col-sm-2 col-form-label">Edad</label>
                                            <div class="col-sm-10">
-                                              <input id="inpedad"  name="inpedad" type="number" class="form-control" >
+                                              <input id="inpedad"  name="inpedad" type="number" class="form-control" placeholder="introducir edad">
                                            </div>
+                                         </div>
+                                         <div class="form-group row">
+                                             <label class="col-sm-2 col-form-label">Sexo</label>
+                                             <div class="col-sm-10">
+                                                <input id="inpsexo"  name="inpsexo" type="text" class="form-control" placeholder="introducir Sexo">
+                                             </div>
+                                           </div>
+                                           <div class="form-group row">
+                                               <label class="col-sm-2 col-form-label">Direccion</label>
+                                               <div class="col-sm-10">
+                                                  <input id="inpdireccion"  name="inpdireccion" type="text" class="form-control" placeholder="introducir Direccion">
+                                               </div>
+                                             </div>
+                                             <div class="form-group row">
+                                                 <label class="col-sm-2 col-form-label">Celular</label>
+                                                 <div class="col-sm-10">
+                                                    <input id="inpcelular"  name="inpcelular" type="number" class="form-control" placeholder="introducir Celular">
+                                                 </div>
                                        </div>
                                       <div class="form-group row">
 
                                            <div class="col-sm-10">
                                                        <input type="hidden" name="url" id="url" value="<?=$url?>">
                                                        <button id="btningresar" type="button" class="btn btn-primary">INGRESAR</button>
+                                                       <a class="btn btn-primary" href="<?=$url?>chofer">cancelar</a>
 
 
                                            </div>

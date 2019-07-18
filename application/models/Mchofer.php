@@ -33,6 +33,9 @@ class Mchofer extends CI_MODEL {
 	    $datos = array( 'cho_nombrecompleto' =>$dato['inpnombrecompleto'],
 	                    'cho_ci' =>$dato['inpci'],
 											'cho_edad' =>$dato['inpedad'],
+											'cho_sexo' =>$dato['inpsexo'],
+											'cho_direccion' =>$dato['inpdireccion'],
+											'cho_celular' =>$dato['inpcelular'],
 	                    'cho_estado' =>"1",
 	                        );
 

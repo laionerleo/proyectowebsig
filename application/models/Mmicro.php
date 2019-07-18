@@ -16,24 +16,24 @@ class Mmicro extends CI_MODEL {
  		$result = $query->result();
  		return $result;
      }
-     
+
 
      public function getubicacion(){
-        
-        
-        $this->db->group_by("mic_id"); 
+
+
+        $this->db->group_by("mic_id");
         $query = $this->db->get('sig_ubicacion');
         $result = $query->result();
         return $result;
      }
      public function create_ubicacion($lat,$long,$idmi){
-    
+
         $datos = array( 'ubi_latitud' =>$lat,
                         'ubi_longitud' =>$long,
                         'mic_id'=>$idmi
-                                
+
                             );
-    
+
         $this->db->insert("sig_ubicacion",$datos);
         $nuevo=$this->db->insert_id();
         return $nuevo;
@@ -48,21 +48,13 @@ class Mmicro extends CI_MODEL {
  		return @$result;
  	}
  	/**/
- 	public function create_one($dato){
-    
-    $datos = array( 'tea_fullname' =>$dato['inp_fullname'],
-                    'tea_email' =>$dato['inp_email'],
-                    'tea_facebook' =>$dato['inp_facebook'],
-                    'tea_twitter' =>$dato['inp_twitter'],
-                    'tea_youtube' =>$dato['inp_youtube'],
-                    'tea_title' =>$dato['inp_title'],
-                    'tea_description' =>$dato['inp_description'],
-                    'tea_position' =>$dato['inp_position'],
-                    'lan' =>$dato['inp_lan'],
-                    'registration_date' =>date('y-m-d h:i:s'),
-                    'user_id' =>$dato['inp_user'],
-                    'tea_status' =>'1',        
-                        );
+	public function guardar($dato){
+
+		$datos = array( 'mic_nrointerno' =>$dato['inpnrointerno'],
+										'mic_placa' =>$dato['inpplaca'],
+										'mic_modelo' =>$dato['inpmodelo'],
+										'mic_estado' =>"1",
+												);
 
     $this->db->insert("sig_micro",$datos);
     $nuevo=$this->db->insert_id();
@@ -81,7 +73,7 @@ class Mmicro extends CI_MODEL {
                     'lan' =>$dato['inp_lan'],
                     'registration_date' =>date('y-m-d h:i:s'),
                     'user_id' =>$dato['inp_user'],
-                    'tea_status' =>'1',        
+                    'tea_status' =>'1',
                         );
     $this->db->where('tea_id',$dato['teaid']);
     $this->db->update("sig_micro",$datos);
@@ -91,16 +83,16 @@ class Mmicro extends CI_MODEL {
 
     /**/
     public function delete_one($id){
-    
+
     $datos = array( 'tea_status' => "0"
-                
+
                         );
     $this->db->where('tea_id',$id);
     $this->db->update("sig_micro",$datos);
 
-    
+
     }
     /**/
- 	
+
 
 }
