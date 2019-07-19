@@ -43,7 +43,7 @@
                         <div class="informer informer-danger">4</div>
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+                                <h3 class="panel-tit666666666666666666666666666666666666le"><span class="fa fa-comments"></span> Messages</h3>
                                 <div class="pull-right">
                                     <span class="label label-danger">4 new</span>
                                 </div>
@@ -53,7 +53,7 @@
                                     <div class="list-group-status status-online"></div>
                                     <img src="<?php echo base_url(); ?>application/assets/assets/images//users/user2.jpg" class="pull-left" alt="John Doe"/>
                                     <span class="contacts-title">John Doe</span>
-                                    <p>Praesent placerat tellus id augue condimentum</p>
+                                    <p>Praesent placerat tellus 66666666666666666666id augue condimentum</p>
                                 </a>
                                 <a href="#" class="list-group-item">
                                     <div class="list-group-status status-away"></div>
@@ -151,50 +151,77 @@
                 <div class="page-content-wrap">
 
                 <div class="row">
-                        <div class="col-md-12">
-                            <h1>RETIROS</h1>
+                  <form class="form-horizontal" id="formdatos">
 
-                            <!-- START DEFAULT DATATABLE -->
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table datatable">
-                                            <thead>
-                                                <tr>
-                                                    <th>N#</th>
-                                                    <th>DESCRIPCION</th>
-                                                    <th>FECHA</th>
-                                                    <th>ID MICRO</th>
-                                                    <th>ESTADO</th>
-                                                    <th>OPCIONES</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php for ($i=0; $i < count($retiros) ; $i++) {
-                                                    # code...
-                                                 ?>
-                                                 <tr>
-                                                    <td><?php echo $i ?></td>
-                                                    <td><?php echo $retiros[$i]->ret_descripcion ?></td>
-                                                    <td><?php echo $retiros[$i]->ret_fecha ?></td>
-                                                    <td><?php echo $retiros[$i]->mic_id ?></td>
-                                                    <td><?php echo $retiros[$i]->ret_estado ?></td>
-                                                    <td> "aqui vendran opciones"</td>
-                                                </tr>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Detalle</label>
+                                           <div class="col-sm-10">
+                                               <input id="inpdetalle"  name="inpdetalle" type="text" class="form-control" placeholder="introducir Detalle">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label class="col-sm-2 col-form-label">Duracion</label>
+                                           <div class="col-sm-10">
+                                              <input id="inpduracion"  name="inpduracion" type="text" class="form-control" placeholder="introducir Duracion">
+                                           </div>
+                                       </div>
+                                      <div class="form-group row">
 
-                                            </tr>
-                                        <?php } ?>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END DEFAULT DATATABLE -->
+                                           <div class="col-sm-10">
+                                                       <input type="hidden" name="url" id="url" value="<?=$url?>">
+                                                       <button id="btningresar" type="button" class="btn btn-primary">INGRESAR</button>
+                                                       <a class="btn btn-primary" href="<?=$url?>sansion">cancelar</a>
 
 
+                                           </div>
 
-                        </div>
+
+                                       </div>
+                                     </form>
+                                     <script type="text/javascript">
+
+                           $("#btningresar").click(
+                                   function () {
+
+                                                           var datos=$("#formdatos").serialize();
+                                                           var urlajax=$("#url").val()+"sansiones/crear";
+                                                             //$("#listarproduccion").load(urlajax,{datos});
+                                                             //$("#cargaguardar").show();
+                                                             //$("#inpcantidad").value("");
+                                                             //4444444444setTimeout(function() {$("#cargaguardar").hide(); }, 1500) ;
+                                                                  $.ajax({
+                                                                       url: urlajax,
+                                                                       data: {datos},
+                                                                       type : 'POST',
+                                                                       dataType: "json",
+                                                                       beforeSend:function( ) {
+                                                                       //$("#inpcantidad").val("");
+                                                                       //$("#cargaguardar").show();
+                                                                       },
+                                                                       success:function(response) {
+                                                                         window.location=$("#url").val()+"sansion";
+
+                                                                       },
+                                                                       error: function (data) {
+                                                                          window.location=$("#url").val()+"sansion";
+                                                                       },
+                                                                       complete:function( ) {
+                                                                        //   $("#cargaguardar").hide();
+
+
+
+                                                                       },
+                                                                   }
+                                                                   );
+
+
+
+                                                           });
+
+
+
+                       </script>
+
 
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->

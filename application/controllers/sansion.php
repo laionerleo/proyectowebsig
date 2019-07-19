@@ -1,21 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sansion extends CI_Controller {
+class sansion extends CI_Controller {
 
 	public function __construct(){
-        
+
         parent::__construct();
- 
+
         //cargamos la base de datos por defecto
         $this->load->database('default');
-        
+
         //cargamos los agentes para los dispositivos
         $this->load->library('user_agent');
 
 		//cargamos el helper url y el helper form
         $this->load->helper(array('url', 'language'));
-        
+
         //cargamamos la libreria del lenguaje
         $this->lang->load('welcome');
 
@@ -30,24 +30,24 @@ class Sansion extends CI_Controller {
     }
 
 	/**/
-		
+
 	public function index()
-	{	
+	{
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$d["sansiones"]=$this->Msansion->read_all();
-		$this->load->view('sansion/index', $d);
-	
+		$this->load->view('sancion/index', $d);
+
 	}
 	/**/
-	
+
 	//vista que direcciona al formulario para crear sansion
 	public function registrar($lan, $idsansion){
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		if ($idsansion==0) {
-		$this->load->view('sansion/create',$d);        	
-		}	
+		$this->load->view('sansion/create',$d);
+		}
 
     }
 	/**/
@@ -55,11 +55,19 @@ class Sansion extends CI_Controller {
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		$this->Msansion->eliminarsansion($idsansion);
-	
-	
-		      
-			
+
+
+
+
     }
+		/**/
+		public function consultabase()
+		{
+				 $d["sansiones"]=$this->Mchofer->read_all();
+				 print_r(json_encode(array("consulta" => $d["sansiones"])));
+				 return json_encode(array("consulta" => $d["sansiones"]));
+
+  	}
 	/**/
 	   public function guardar()
    {
@@ -70,8 +78,8 @@ class Sansion extends CI_Controller {
         $ok=$this->Msansion->guardar($nuevodato);
         $d["produccion"]=$this->Msansion->getproduccion();
 
-      
-    
+
+
    }
 	/**/
 
@@ -80,7 +88,7 @@ class Sansion extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error404', $d);
-	
+
 	}
 
 	/**/
@@ -90,7 +98,7 @@ class Sansion extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 	/**/
@@ -100,7 +108,7 @@ class Sansion extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 
