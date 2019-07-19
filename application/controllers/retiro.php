@@ -1,21 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Retiro extends CI_Controller {
+class retiro extends CI_Controller {
 
 	public function __construct(){
-        
+
         parent::__construct();
- 
+
         //cargamos la base de datos por defecto
         $this->load->database('default');
-        
+
         //cargamos los agentes para los dispositivos
         $this->load->library('user_agent');
 
 		//cargamos el helper url y el helper form
         $this->load->helper(array('url', 'language'));
-        
+
         //cargamamos la libreria del lenguaje
         $this->lang->load('welcome');
 
@@ -30,24 +30,24 @@ class Retiro extends CI_Controller {
     }
 
 	/**/
-		
+
 	public function index()
-	{	
+	{
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$d["retiros"]=$this->Mretiro->read_all();
 		$this->load->view('retiro/index', $d);
-	
+
 	}
 	/**/
-	
-	//vista que direcciona al formulario para crear propietario
+
+	//vista que direcciona al formulario para crear chofer
 	public function registrar($lan, $idretiro){
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		if ($idretiro==0) {
-		$this->load->view('retiro/create',$d);        	
-		}	
+		$this->load->view('retiro/create',$d);
+		}
 
     }
 	/**/
@@ -55,23 +55,32 @@ class Retiro extends CI_Controller {
         $d = array();
         $this->Msecurity->url_and_lan($d);
 		$this->Mretiro->eliminarretiro($idretiro);
-	
-	
-		      
-			
+
+
+
+
     }
+	/**/
+	public function consultabase()
+	{
+			 $d["retiros"]=$this->Mretiro->read_all();
+			 print_r(json_encode(array("consulta" => $d["retiros"])));
+			 return json_encode(array("consulta" => $d["retiros"]));
+
+	}
+		/**/
 	/**/
 	   public function guardar()
    {
         $d = array();
-		$this->Msecurity->url_and_lan($d);
+				$this->Msecurity->url_and_lan($d);
         parse_str($this->input->post("datos"), $nuevodato);
-        $nuevodato = $this->Msecurity->sanear_array($nuevodato);
-        $ok=$this->Mpropietario->guardar($nuevodato);
-        $d["produccion"]=$this->Mretiro->getproduccion();
+        //$nuevodato = $this->Msecurity->sanear_array($nuevodato);
+        $ok=$this->Mretiro->guardar($nuevodato);
+      ///  $d["produccion"]=$this->Mchofer->getproduccion();
 
-      
-    
+
+
    }
 	/**/
 
@@ -80,7 +89,7 @@ class Retiro extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error404', $d);
-	
+
 	}
 
 	/**/
@@ -90,7 +99,7 @@ class Retiro extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 	/**/
@@ -100,7 +109,7 @@ class Retiro extends CI_Controller {
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
 		$this->load->view('error403', $d);
-	
+
 	}
 
 
