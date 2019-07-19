@@ -21,6 +21,12 @@ $route[$l.'micros/crear']                 ='Micro/guardar';
 $route[$l.'crearretiro/(:any)/(:any)']                 ='Welcome/crearretiro/$1/$2/$3';
 
 
+$route[$l.'sansiones']                 		= 'Sansion';
+$route[$l.'sansiones/vistacrear/(:num)']      ='Sansion/registrar/$1/$2';
+$route[$l.'sansiones/crear']                 ='Sansion/guardar';
+$route[$l.'retiros']                 		= 'Retiro';
+$route[$l.'retiros/vistacrear/(:num)']      ='Retiro/registrar/$1/$2';
+$route[$l.'retiros/crear']                 ='Retiro/guardar';
 
 
 

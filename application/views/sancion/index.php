@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <!-- Mirrored from aqvatarius.com/themes/atlant/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 19:26:48 GMT -->
 <?php $this->load->view("theme/head") ; ?>
     <body>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
-            
+
             <!-- START PAGE SIDEBAR -->
             <?php $this->load->view("theme/menu") ; ?>
             <!-- END PAGE SIDEBAR -->
-            
+
             <!-- PAGE CONTENT -->
             <div class="page-content">
-                
+
                 <!-- START X-NAVIGATION VERTICAL -->
                 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
                     <!-- TOGGLE NAVIGATION -->
@@ -26,24 +26,24 @@
                         <form role="form">
                             <input type="text" name="search" placeholder="Search..."/>
                         </form>
-                    </li>   
-                    <!-- END SEARCH -->                    
+                    </li>
+                    <!-- END SEARCH -->
                     <!-- POWER OFF -->
                     <li class="xn-icon-button pull-right last">
                         <a href="#"><span class="fa fa-power-off"></span></a>
                         <ul class="xn-drop-left animated zoomIn">
                             <li><a href="pages-lock-screen.html"><span class="fa fa-lock"></span> Lock Screen</a></li>
                             <li><a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span> Sign Out</a></li>
-                        </ul>                        
-                    </li> 
-                    <!-- END POWER OFF -->                    
+                        </ul>
+                    </li>
+                    <!-- END POWER OFF -->
                     <!-- MESSAGES -->
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-comments"></span></a>
                         <div class="informer informer-danger">4</div>
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                                <h3 class="panel-tit666666666666666666666666666666666666le"><span class="fa fa-comments"></span> Messages</h3>
                                 <div class="pull-right">
                                     <span class="label label-danger">4 new</span>
                                 </div>
@@ -53,7 +53,7 @@
                                     <div class="list-group-status status-online"></div>
                                     <img src="<?php echo base_url(); ?>application/assets/assets/images//users/user2.jpg" class="pull-left" alt="John Doe"/>
                                     <span class="contacts-title">John Doe</span>
-                                    <p>Praesent placerat tellus id augue condimentum</p>
+                                    <p>Praesent placerat tellus 66666666666666666666id augue condimentum</p>
                                 </a>
                                 <a href="#" class="list-group-item">
                                     <div class="list-group-status status-away"></div>
@@ -73,11 +73,11 @@
                                     <span class="contacts-title">Darth Vader</span>
                                     <p>I want my money back!</p>
                                 </a>
-                            </div>     
+                            </div>
                             <div class="panel-footer text-center">
                                 <a href="pages-messages.html">Show all messages</a>
-                            </div>                            
-                        </div>                        
+                            </div>
+                        </div>
                     </li>
                     <!-- END MESSAGES -->
                     <!-- TASKS -->
@@ -86,12 +86,12 @@
                         <div class="informer informer-warning">3</div>
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>                                
+                                <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>
                                 <div class="pull-right">
                                     <span class="label label-warning">3 active</span>
                                 </div>
                             </div>
-                            <div class="panel-body list-group scroll" style="height: 200px;">                                
+                            <div class="panel-body list-group scroll" style="height: 200px;">
                                 <a class="list-group-item" href="#">
                                     <strong>Phasellus augue arcu, elementum</strong>
                                     <div class="progress progress-small progress-striped active">
@@ -119,12 +119,12 @@
                                         <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
                                     </div>
                                     <small class="text-muted">John Doe, 21 Sep 2017 /</small><small class="text-success"> Done</small>
-                                </a>                                
-                            </div>     
+                                </a>
+                            </div>
                             <div class="panel-footer text-center">
                                 <a href="pages-tasks.html">Show all tasks</a>
-                            </div>                            
-                        </div>                        
+                            </div>
+                        </div>
                     </li>
                     <!-- END TASKS -->
                     <!-- LANG BAR -->
@@ -134,25 +134,26 @@
                             <li><a href="#"><span class="flag flag-gb"></span> English</a></li>
                             <li><a href="#"><span class="flag flag-de"></span> Deutsch</a></li>
                             <li><a href="#"><span class="flag flag-cn"></span> Chinese</a></li>
-                        </ul>                        
-                    </li> 
+                        </ul>
+                    </li>
                     <!-- END LANG BAR -->
                 </ul>
-                <!-- END X-NAVIGATION VERTICAL -->                     
+                <!-- END X-NAVIGATION VERTICAL -->
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>                    
+                    <li><a href="#">Home</a></li>
                     <li class="active">Dashboard</li>
                 </ul>
-                <!-- END BREADCRUMB -->                       
-                
+                <!-- END BREADCRUMB -->
+
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                    
+
                 <div class="row">
                         <div class="col-md-12">
-                            <h1>SANCIONES</h1>
+                            <h1>SANSIONES</h1>
+                            <a class="btn btn-primary" href="<?=$url  ?>sanciones/vistacrear/0">crear sansion</a>
 
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
@@ -162,28 +163,27 @@
                                             <thead>
                                                 <tr>
                                                     <th>N#</th>
-                                                    <th>DETALLE </th>
+                                                    <th>DETALLE</th>
                                                     <th>DURACION</th>
                                                     <th>ESTADO</th>
                                                     <th>OPCIONES</th>
-
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php for ($i=0; $i < count($sanciones) ; $i++) { 
+                                            <?php for ($i=0; $i < count($sansiones) ; $i++) {
                                                     # code...
                                                  ?>
                                                  <tr>
                                                     <td><?php echo $i ?></td>
-                                                    <td><?php echo $sanciones[$i]->san_detalle ?></td>
-                                                    <td><?php echo $sanciones[$i]->san_duracion ?></td>
-                                                    <td><?php echo $sanciones[$i]->san_estado ?></td>
+                                                    <td><?php echo $sansiones[$i]->san_detalle ?></td>
+                                                    <td><?php echo $sansiones[$i]->san_duracion ?></td>
+                                                    <td><?php echo $sansiones[$i]->san_estado ?></td>
                                                     <td> "aqui vendran opciones"</td>
                                                 </tr>
 
                                             </tr>
                                         <?php } ?>
-  
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -191,13 +191,13 @@
                             </div>
                             <!-- END DEFAULT DATATABLE -->
 
-                          
+
 
                         </div>
-                    
+
                 </div>
-                <!-- END PAGE CONTENT WRAPPER -->                                
-            </div>            
+                <!-- END PAGE CONTENT WRAPPER -->
+            </div>
             <!-- END PAGE CONTENT -->
         </div>
         <!-- END PAGE CONTAINER -->
@@ -208,7 +208,7 @@
                 <div class="mb-middle">
                     <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
                     <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
+                        <p>Are you sure you want to log out?</p>
                         <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
                     </div>
                     <div class="mb-footer">
@@ -225,18 +225,12 @@
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="<?php echo base_url(); ?>application/assets/audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="<?php echo base_url(); ?>application/assets/audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->                  
-        
+        <!-- END PRELOADS -->
+
     <!-- START SCRIPTS -->
      <?php $this->load->view("theme/js") ; ?>
-    <!-- END SCRIPTS -->         
+    <!-- END SCRIPTS -->
     </body>
 
 <!-- Mirrored from aqvatarius.com/themes/atlant/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 May 2019 19:27:42 GMT -->
 </html>
-
-
-
-
-
-
