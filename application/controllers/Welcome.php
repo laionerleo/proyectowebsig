@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
         $this->lang->load('welcome');
 
         //cargamos los modelos
-        $this->load->model(array('Msecurity'));
+        $this->load->model(array('Msecurity','Mmicro'));
 
     }
 
@@ -34,22 +34,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('index', $d);
 	
 	}
-	public function plantilla1()
+	public function registrarubicacion($lan,$lat,$long,$idmicro)
 	{	
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
-
-		$this->load->view('index1', $d);
+		$ok=$this->Mmicro->create_ubicacion($lat,$long,$idmicro);
+		echo "ubicacion actualizada";
 	
 	}
 
 	/**/
-	public function plantilla2()
+	public function crearretiro($la,$motivo,$id)
 	{	
 		$d = array();
 		$this->Msecurity->url_and_lan($d);
-
-		$this->load->view('index2', $d);
+		$ok=$this->Mmicro->create_retiro($motivo,$id);
+		echo "retiro creado ";
 	
 	}
 	/**/

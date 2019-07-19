@@ -18,6 +18,10 @@ $route[$l.'propietarios/crear']      ='Propietario/guardar';
 $route[$l.'micros']                 		= 'Micro';
 $route[$l.'micros/vistacrear/(:num)']      ='Micro/registrar/$1/$2';
 $route[$l.'micros/crear']                 ='Micro/guardar';
+$route[$l.'crearretiro/(:any)/(:any)']                 ='Welcome/crearretiro/$1/$2/$3';
+
+
+
 
 
 

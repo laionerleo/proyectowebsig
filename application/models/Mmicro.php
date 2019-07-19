@@ -20,7 +20,7 @@ class Mmicro extends CI_MODEL {
 
      public function getubicacion(){
 
-
+        $this->db->select("max(ubi_hora),ubi_latitud,ubi_longitud");
         $this->db->group_by("mic_id");
         $query = $this->db->get('sig_ubicacion');
         $result = $query->result();
@@ -28,9 +28,12 @@ class Mmicro extends CI_MODEL {
      }
      public function create_ubicacion($lat,$long,$idmi){
 
-        $datos = array( 'ubi_latitud' =>$lat,
+        $datos = array( 
+            
+                    'ubi_latitud' =>$lat,
                         'ubi_longitud' =>$long,
-                        'mic_id'=>$idmi
+                        'mic_id'=>$idmi,
+                        'ubi_hora'=>date('y-m-d h:i:s')
 
                             );
 
@@ -38,6 +41,25 @@ class Mmicro extends CI_MODEL {
         $nuevo=$this->db->insert_id();
         return $nuevo;
         }
+
+        
+
+        public function create_retiro($mot,$id){
+
+            $datos = array( 
+                
+                        'ret_descripcion' =>$mot,
+                            
+                            'mic_id'=>$id,
+                            'ret_fecha'=>date('y-m-d h:i:s'),
+                            "re_estado"=>"1"
+    
+                                );
+    
+            $this->db->insert("sig_retiro",$datos);
+            $nuevo=$this->db->insert_id();
+            return $nuevo;
+            }
  	/**///read_one
  	public function read_one($id){
          //$this->db->where('tea_id',$id);

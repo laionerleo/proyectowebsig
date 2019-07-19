@@ -30,7 +30,7 @@ class Mpropietario extends CI_MODEL {
 
     $datos = array( 'pro_nombrecompleto' =>$dato['inpnombrecompleto'],
                     'pro_celular' =>$dato['inpcelular'],
-										'pro_direccion' =>$dato['inpdir'],
+					'pro_direccion' =>$dato['inpdir'],
 										'pro_ci' =>$dato['inpci'],
                     'pro_estado' =>"1",
                         );
